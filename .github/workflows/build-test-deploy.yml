@@ -16,6 +16,8 @@ jobs:
     steps: 
       - name: checkout repo
         uses: actions/checkout@v3
+      - name: Adding markdown
+        run: echo '### Hello world! 🚀' >> $GITHUB_STEP_SUMMARY
       # Modified to use the node-version from the workflow inputs
       - name: use node.js
         uses: actions/setup-node@v3
@@ -24,8 +26,7 @@ jobs:
 
       - run: npm install
       - run: npm run build
-      - name: Adding markdown
-        run: echo '### Hello world! 🚀' >> $GITHUB_STEP_SUMMARY
+
 
   test: 
     needs: build
