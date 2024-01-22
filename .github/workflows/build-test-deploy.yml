@@ -1,13 +1,13 @@
 name: build-test-deploy
 # Changed 'on' to enable this workflow to be called from other workflows
-on:
-  workflow_call:
+on: push
+  # workflow_call:
     # Introduced 'inputs' to define parameters that can be passed when calling this workflow
-    inputs:
-      node-version:
-        description: "Node version"
-        required: true
-        type: string
+   # inputs:
+      #node-version:
+        #description: "Node version"
+        #required: true
+        #type: string 
 
 jobs: 
   build:
